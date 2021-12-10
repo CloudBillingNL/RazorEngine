@@ -253,7 +253,7 @@ type BuildConfiguration =
             System.AppDomain.CurrentDomain.GetAssemblies()
             |> Seq.choose (fun a -> try Some (a.Location) with _ -> None)
             |> Seq.cache
-          let getItem name = loadedList |> Seq.find (fun l -> l.Contains name)
+          let getItem (name: string) = loadedList |> Seq.find (fun l -> l.Contains name)
           [ (getItem "FSharp.Core").Replace("4.3.0.0", "4.3.1.0")  // (if isMono then "/usr/lib64/mono/gac/FSharp.Core/4.3.1.0__b03f5f7f11d50a3a/FSharp.Core.dll" else "FSharp.Core") 
             Path.GetFullPath "./packages/FSharp.Compiler.Service/lib/net40/FSharp.Compiler.Service.dll"
             Path.GetFullPath "./packages/FSharp.Formatting/lib/net40/System.Web.Razor.dll"
