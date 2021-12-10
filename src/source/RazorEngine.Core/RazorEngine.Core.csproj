@@ -160,6 +160,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Razor4' ">
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFramework>net45</TargetFramework>
     <Platform>Razor4</Platform>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
