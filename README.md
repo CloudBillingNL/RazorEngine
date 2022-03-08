@@ -176,6 +176,15 @@ To remove the RazorEngine warnings you can additionally use `config.CachingProvi
 See also https://github.com/Antaris/RazorEngine/issues/244 for more details.
 
 
+## Building
+
+Execute `./build.sh` on mac. Sometimes the build fails (build_net45) with a message that a framework reference is missing. To fix:
+
+- Close the editor
+- Run `cd source && git clean -xdf`
+- Build again
+
+
 ## More
 
 On the right side you can find links to advanced topics and additional [documentation](http://antaris.github.io/RazorEngine/).
