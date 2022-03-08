@@ -1,4 +1,10 @@
-﻿### 3.10.1-cb
+﻿### 3.10.2-cb
+
+* Load debug information when `DisableTempFileLocking == true`.
+
+### 3.10.1-cb
+
+* Removed Dynamic support in sandbox.
 
 ### 3.10.0 / 4.5.0-rc1
 

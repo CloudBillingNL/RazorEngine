@@ -261,7 +261,15 @@
             var assemblyPath = compileResult.PathToAssembly;
             if (DisableTempFileLocking)
             {
-                compileResult.CompiledAssembly = Assembly.Load(File.ReadAllBytes(assemblyPath));
+                var symbolsPath = Path.ChangeExtension(compileResult.PathToAssembly, "pdb");
+                if (File.Exists(symbolsPath))
+                {
+                    compileResult.CompiledAssembly = Assembly.Load(File.ReadAllBytes(assemblyPath), File.ReadAllBytes(symbolsPath), SecurityContextSource.CurrentAppDomain);
+                }
+                else
+                {
+                    compileResult.CompiledAssembly = Assembly.Load(File.ReadAllBytes(assemblyPath), null, SecurityContextSource.CurrentAppDomain);
+                }
             }
             else
             {
